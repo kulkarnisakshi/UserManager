@@ -28,7 +28,9 @@ public class UserController {
     @GetMapping("/")
     public String home()
     {
-        return "home";
+        return "user/home";
     }
+
+
 
 }
