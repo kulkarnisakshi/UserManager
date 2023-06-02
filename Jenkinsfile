@@ -66,6 +66,7 @@ pipeline
                   sh 'mvn clean compile'
 				  echo 'code compilation is completed'
              }
+        }
 
 
         /**stage('Sonarqube scanning')
