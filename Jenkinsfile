@@ -164,29 +164,32 @@ pipeline
             }
         }
 
-        stage('Delete docker images from jenkins')
-        {
-            steps
-            {
-                      sh 'docker rmi $(docker images -q) -f'
-
-            }
-        }
 
 
-           /***stage('Upload Docker Images to Nexus') { Nexus stage
+
+           stage('Upload Docker Images to Nexus')
+           { Nexus stage
                       steps {
                           script{
                              withCredentials([usernamePassword(credentialsId: 'nexus-credentials' , usernameVariable: 'USERNAME' , passwordVariable: 'PASSWORD')]){
-                             sh 'docker login http://65.2.169.16/:8085/repository/makemytrip/ -u admin -p ${PASSWORD}'
+                             sh 'docker login http://3.109.210.70:8085/repository/usermanager/ -u admin -p ${PASSWORD}'
                              echo "Push Docker Image to Nexus : In Progress"
-                             sh 'docker tag usermanager 65.2.169.16/:8085/usermanager:latest'
-                             sh 'docker push 65.2.169.16/:8085/usermanager'
+                             sh 'docker tag usermanager 3.109.210.70:8085/usermanager:latest'
+                             sh 'docker push 3.109.210.70:8085/usermanager'
                              echo " Push Docker Image to Nexus : Completed"
                           }
                       }
                     }
-          		}***/
+          		}
+
+          stage('Delete docker images from jenkins')
+                  {
+                      steps
+                      {
+                                sh 'docker rmi $(docker images -q) -f'
+
+                      }
+                  }
 
     }
 }
