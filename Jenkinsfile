@@ -105,7 +105,7 @@ pipeline
             steps
             {
                       echo 'Starting Building Docker Image'
-                      sh 'docker build -t kulkarnisakshi/usermanager .'
+                      /**sh 'docker build -t kulkarnisakshi/usermanager .'**/
                       sh 'docker build -t usermanager .'
                       echo 'Completed  Building Docker Image'
             }
