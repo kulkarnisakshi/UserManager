@@ -168,7 +168,7 @@ pipeline
 
 
            stage('Upload Docker Images to Nexus')
-           { Nexus stage
+           {
                       steps {
                           script{
                              withCredentials([usernamePassword(credentialsId: 'nexus-credentials' , usernameVariable: 'USERNAME' , passwordVariable: 'PASSWORD')]){
