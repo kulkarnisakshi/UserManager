@@ -100,7 +100,7 @@ pipeline
         }
 
 
-        stage('Building & Tag Docker Image')
+        stage('Build & Tag Docker Image')
         {
             steps
             {
