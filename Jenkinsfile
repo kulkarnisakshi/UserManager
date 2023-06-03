@@ -69,7 +69,7 @@ pipeline
         }
 
 
-        /**stage('Sonarqube scanning')
+        stage('Sonarqube scanning')
 		{
         		environment
         		{
@@ -87,7 +87,7 @@ pipeline
                             waitForQualityGate abortPipeline: true
                         }
         			}
-        }***/
+        }
 
         stage('Code Package')
         {
@@ -172,10 +172,10 @@ pipeline
                       steps {
                           script{
                              withCredentials([usernamePassword(credentialsId: 'nexus-credentials' , usernameVariable: 'USERNAME' , passwordVariable: 'PASSWORD')]){
-                             sh 'docker login http://3.109.210.70:8085/repository/usermanager/ -u admin -p ${PASSWORD}'
+                             sh 'docker login http://3.108.238.123:8085/repository/usermanager/ -u admin -p ${PASSWORD}'
                              echo "Push Docker Image to Nexus : In Progress"
-                             sh 'docker tag usermanager 3.109.210.70:8085/usermanager:latest'
-                             sh 'docker push 3.109.210.70:8085/usermanager'
+                             sh 'docker tag usermanager 3.108.238.123:8085/usermanager:latest'
+                             sh 'docker push 3.108.238.123:8085/usermanager'
                              echo " Push Docker Image to Nexus : Completed"
                           }
                       }
