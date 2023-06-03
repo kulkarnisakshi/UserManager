@@ -17,7 +17,7 @@ pipeline
     {
 
 
-        stage('chk Java version')
+        stage('Check Java version')
         {
             steps
             {
@@ -27,7 +27,7 @@ pipeline
             }
         }
 
-        stage('chk Git version')
+        stage('Check Git version')
         {
             steps
             {
@@ -37,7 +37,7 @@ pipeline
             }
         }
 
-        stage('chk Maven version')
+        stage('Check Maven version')
         {
             steps
             {
@@ -47,7 +47,7 @@ pipeline
             }
         }
 
-        stage('chk Jenkins version')
+        stage('Check Jenkins version')
         {
             steps
             {
@@ -123,7 +123,7 @@ pipeline
         }
 
 
-        stage(' Docker push to Docker Hub')
+        stage(' Docker Image push to Docker Hub')
         {
             steps
             {
@@ -167,7 +167,7 @@ pipeline
 
 
 
-           stage('Upload Docker Images to Nexus')
+           stage(' Docker Images Upload to Nexus')
            {
                       steps {
                           script{
@@ -182,7 +182,7 @@ pipeline
                     }
           		}
 
-          stage('Delete docker images from jenkins')
+          stage('Delete Docker Images from Jenkins')
                   {
                       steps
                       {
