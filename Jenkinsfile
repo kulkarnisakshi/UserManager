@@ -112,7 +112,7 @@ pipeline
         }
 
 
-        stage('Docker Image Scanning')
+        /**stage('Docker Image Scanning')
         {
             steps
             {
@@ -120,7 +120,7 @@ pipeline
                        sh 'java --version'
                        echo 'Docker Image Scanning Completed'
             }
-        }
+        }**/
 
 
         stage(' Docker Image push to Docker Hub')
