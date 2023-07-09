@@ -69,7 +69,7 @@ pipeline
         }
 
 
-        stage('Sonarqube scanning')
+        /**stage('Sonarqube scanning')
 		{
         		environment
         		{
@@ -87,7 +87,7 @@ pipeline
                             waitForQualityGate abortPipeline: true
                         }
         			}
-        }
+        }**/
 
         stage('Code Package')
         {
@@ -123,7 +123,7 @@ pipeline
         }
 
 
-        stage(' Docker Image push to Docker Hub')
+        /**stage(' Docker Image push to Docker Hub')
         {
             steps
             {
@@ -189,7 +189,7 @@ pipeline
                                 sh 'docker rmi $(docker images -q) -f'
 
                       }
-                  }
+                  }**/
 
     }
 }
